@@ -1,11 +1,13 @@
 {
   "name": "erd-generator",
+  "bin": { "erd-generator": "./bin/generate" },
   "version": "0.0.1",
   "description": "Entity Relationship Diagram generator for BigTable-style databases like HBase and Accumulo.",
-  "main": "js/gvCreator.js",
+  "main": "lib/main.js",
   "dependencies": {
     "DOMBuilder": "~2.1.6",
-    "js-yaml": "~2.1.0"
+    "js-yaml": "~2.1.0",
+    "optimist": "~0.6.0"
   },
   "devDependencies": {},
   "scripts": {

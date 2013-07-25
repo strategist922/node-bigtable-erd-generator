@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var erdGenerator = require('../lib/main');
+
+var argv = require("optimist")
+	.usage('Usage: $0 --outDir [relative path] --yamlDir [relative path]')
+	.demand(['outDir', 'yamlDir'])
+ 	.argv;
+
+erdGenerator(argv.outDir.replace(/\/?$/, '') + '/', argv.yamlDir.replace(/\/?$/, '') + '/');
