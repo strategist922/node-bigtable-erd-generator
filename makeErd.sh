@@ -8,7 +8,10 @@ while [ -h "$SOURCE" ]; do
 done                                          
 DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
-mkdir -p build
-rm -f build/erd.gv && node ${DIR}/bin/generate --outDir build/ --yamlDir yaml/
-rm -f build/erd.png && dot build/erd.gv | neato -n -Tpng -obuild/erd.png
+IN_DIR=$1
+OUT_DIR=$2
+
+mkdir -p ${OUT_DIR}
+rm -f ${OUT_DIR}/erd.gv && node ${DIR}/bin/generate --outDir ${OUT_DIR} --yamlDir ${IN_DIR}
+rm -f ${OUT_DIR}/erd.png && dot ${OUT_DIR}/erd.gv | neato -n -Tpng -o${OUT_DIR}/erd.png
 
