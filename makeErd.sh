@@ -9,6 +9,6 @@ done
 DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
 mkdir -p build
-rm -f ${DIR}/build/erd.gv && node bin/generate --outDir ${DIR}/build/ --yamlDir ${DIR}/yaml/
-rm -f ${DIR}/build/erd.png && dot ${DIR}/build/erd.gv | neato -n -Tpng -o${DIR}/build/erd.png
+rm -f build/erd.gv && node ${DIR}/bin/generate --outDir build/ --yamlDir yaml/
+rm -f build/erd.png && dot build/erd.gv | neato -n -Tpng -obuild/erd.png
 
