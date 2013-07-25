@@ -22,7 +22,7 @@
     "hbase",
     "accumulo",
     "diagram",
-    "generator",
+    "generator"
   ],
   "author": "Jeff Principe",
   "license": "MIT",
